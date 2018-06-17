@@ -41,7 +41,7 @@ into another sequence of symbols, is used for such tasks [3]. Such networks are 
 the inclusion of bidirectionality, and long short-term memory (LSTM) cells. An attention mechanism [4], which enables the chatbot to handle very long-range dependencies, is introduced along with the previously mentioned
 features.
 
-
+<br/>
 1. Introduction
 <br/>It has long been the focus for Artificial Intelligence (AI) to build systems that can maintain a
 dialog with humans in an intuitive manner. This post discusses the implementation of a chatbot
@@ -98,10 +98,9 @@ along with an attention mechanism, for improved handling of long-range dependenc
 been incorporated in the chatbot to produce more meaningful responses [4]. This model and its
 components are described in the next section.
 
-
-2. Background
 <br/>
-RNNs have diverse architectures and thus, can be deployed for accomplishing various tasks. The
+2. Background
+<br/>RNNs have diverse architectures and thus, can be deployed for accomplishing various tasks. The
 different types of RNN architectures are one-to-one which is considered as a generic neural
 network architecture, one-to-many for music notes generation, many-to-one for sentiment
 classification, many-to-many for machine translation where the input and output sequence lengths
