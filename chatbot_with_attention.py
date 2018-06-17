@@ -1,18 +1,13 @@
 # Building a ChatBot with Deep NLP
  
- 
- 
 # Importing the libraries
 import numpy as np
 import tensorflow as tf
 import re
 import time
  
- 
- 
 ########## PART 1 - DATA PREPROCESSING ##########
 
- 
 # Importing the dataset
 lines = open('movie_lines.txt', encoding = 'utf-8', errors = 'ignore').read().split('\n')
 conversations = open('movie_conversations.txt', encoding = 'utf-8', errors = 'ignore').read().split('\n')
@@ -67,7 +62,6 @@ for question in questions:
 clean_answers = []
 for answer in answers:
     clean_answers.append(clean_text(answer))
-
 
 print(len(clean_questions))
 print(len(clean_answers)) 
@@ -172,9 +166,8 @@ for length in range(1, 25 + 1):
 print(len(sorted_clean_questions))
 print(len(sorted_clean_answers))
  
+ 
 ########## PART 2 - BUILDING THE SEQ2SEQ MODEL ##########
- 
- 
  
 # Creating placeholders for the inputs and the targets
 def model_inputs():
@@ -301,11 +294,8 @@ def seq2seq_model(inputs, targets, keep_prob, batch_size, sequence_length, answe
     return training_predictions, test_predictions
  
  
- 
 ########## PART 3 - TRAINING THE SEQ2SEQ MODEL ##########
- 
- 
- 
+
 # Setting the Hyperparameters
 epochs = 10
 batch_size = 256
@@ -440,10 +430,7 @@ for epoch in range(1, epochs + 1):
 print("Game Over")
  
  
- 
 ########## PART 4 - TESTING THE SEQ2SEQ MODEL ##########
- 
- 
  
 # Loading the weights and Running the session
 checkpoint = "./chatbot_weights.ckpt"
