@@ -70,7 +70,7 @@ short_questions = []
 short_answers = []
 i = 0
 for question in clean_questions:
-    if 2 <= len(question.split()) <= 30:
+    if 2 <= len(question.split()) <= 50:
         short_questions.append(question)
         short_answers.append(clean_answers[i])
     i += 1
@@ -78,7 +78,7 @@ clean_questions = []
 clean_answers = []
 i = 0
 for answer in short_answers:
-    if 2 <= len(answer.split()) <= 30:
+    if 2 <= len(answer.split()) <= 50:
         clean_answers.append(answer)
         clean_questions.append(short_questions[i])
     i += 1
@@ -157,7 +157,7 @@ for answer in clean_answers:
 # Sorting questions and answers by the length of questions
 sorted_clean_questions = []
 sorted_clean_answers = []
-for length in range(1, 25 + 1):
+for length in range(1, 50 + 1):
     for i in enumerate(questions_into_int):
         if len(i[1]) == length:
             sorted_clean_questions.append(questions_into_int[i[0]])
@@ -297,12 +297,12 @@ def seq2seq_model(inputs, targets, keep_prob, batch_size, sequence_length, answe
 ########## PART 3 - TRAINING THE SEQ2SEQ MODEL ##########
 
 # Setting the Hyperparameters
-epochs = 10
-batch_size = 256
-rnn_size = 100
+epochs = 100
+batch_size = 64
+rnn_size = 512
 num_layers = 3
-encoding_embedding_size = 100
-decoding_embedding_size = 100
+encoding_embedding_size = 512
+decoding_embedding_size = 512
 learning_rate = 0.001
 learning_rate_decay = 0.9
 min_learning_rate = 0.0001
@@ -316,7 +316,7 @@ session = tf.InteractiveSession()
 inputs, targets, lr, keep_prob = model_inputs()
  
 # Setting the sequence length
-sequence_length = tf.placeholder_with_default(25, None, name = 'sequence_length')
+sequence_length = tf.placeholder_with_default(50, None, name = 'sequence_length')
  
 # Getting the shape of the inputs tensor
 input_shape = tf.shape(inputs)
@@ -450,8 +450,8 @@ while(True):
     if question == 'Goodbye':
         break
     question = convert_string2int(question, questionswords2int)
-    question = question + [questionswords2int['<PAD>']] * (25 - len(question))
-    fake_batch = np.zeros((batch_size, 25))
+    question = question + [questionswords2int['<PAD>']] * (50 - len(question))
+    fake_batch = np.zeros((batch_size, 50))
     fake_batch[0] = question
     predicted_answer = session.run(test_predictions, {inputs: fake_batch, keep_prob: 0.5})[0]
     answer = ''
