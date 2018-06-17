@@ -26,7 +26,10 @@ Other Relevant Resources:
 <br/> https://deeplearning4j.org/neuralnet-overview
 <br/> https://www.tensorflow.org/tutorials/seq2seq
 
-Abstract: <br/> 
+
+<br/>
+Abstract:
+<br/>
 Recurrent Neural Networks (RNNs), a type of Artificial Neural Network (ANN),
 make decisions based on the knowledge gained from previous inputs, which
 makes them ideal for sequential data i.e. textual sentences or speech. Thus, these
@@ -40,7 +43,9 @@ the inclusion of bidirectionality, and long short-term memory (LSTM) cells. An a
 features.
 
 
+<br/>
 Introduction
+<br/>
 It has long been the focus for Artificial Intelligence (AI) to build systems that can maintain a
 dialog with humans in an intuitive manner. This post discusses the implementation of a chatbot
 which will enable users to indulge in an one-to-one multi-turn conversation. The movie-dialog
@@ -51,6 +56,7 @@ instrumental in providing technical support as it includes conversations related
 domain. Additionally, the considered dataset contains unstructured conversations, which favors
 the development of a chatbot that could lead a general conversation [2].
 <br>
+
 The chatbot in discussion leverages deep ANNs to do away with older rule-based models which
 are restricted in terms of their interpretation of questions and generation of responses, and thus,
 cannot handle complex / unstructured queries. Deep ANNs introduce a generative element which
@@ -59,6 +65,7 @@ whole to generate new / unfamiliar answers compared to the training dataset, thu
 chatbot to handle complex queries [7]. However, in case exhaustive training is not done, such
 models may be prone to grammatical and spelling errors.
 <br>
+
 ANNs are computational and mathematical models that mimic the functioning of a human’s
 central nervous system. These networks involve a large number of highly interconnected
 processing elements called neurons which work in parallel to solve complex problems by
@@ -70,6 +77,7 @@ no node is touched twice. ANNs’ advantages include adaptive learning, self-org
 real-time operation. Deep ANNs are an extension to such networks, where there are multiple
 hidden layers and are therefore, capable of handling higher complexity [9].
 <br>
+
 A special type of ANN is the RNN. While feedforward networks like standard ANNs only
 consider the current input, RNNs also consider what they had perceived previously in time i.e.
 they also contain feedback loops. This attribute of an RNN makes them suitable for handling
@@ -82,6 +90,7 @@ which provide feedback and memory to the network periodically, allowing the syst
 through sequence of inputs and not individual patterns. Its other applications include image
 captioning, speech synthesis, and music generation.
 <br>
+
 This post discusses the application of RNN-encoder-decoder architecture for building chatbots.
 These models, containing two RNNs, can be seen as English to English translation systems,
 where “two RNNs are jointly trained to maximize conditional probability of the target sequence
@@ -92,8 +101,10 @@ along with an attention mechanism, for improved handling of long-range dependenc
 been incorporated in the chatbot to produce more meaningful responses [4]. This model and its
 components are described in the next section.
 
+
 <br>
 Background
+<br/>
 RNNs have diverse architectures and thus, can be deployed for accomplishing various tasks. The
 different types of RNN architectures are one-to-one which is considered as a generic neural
 network architecture, one-to-many for music notes generation, many-to-one for sentiment
