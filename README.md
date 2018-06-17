@@ -42,7 +42,7 @@ into another sequence of symbols, is used for such tasks [3]. Such networks are 
 the inclusion of bidirectionality, and long short-term memory (LSTM) cells. An attention mechanism [4], which enables the chatbot to handle very long-range dependencies, is introduced along with the previously mentioned
 features.
 
-
+<br>
 <br/>
 1. Introduction
 <br/>
@@ -118,7 +118,7 @@ working with variable length input and output sequence text [2].
 <br>
 
 ![alt text](https://github.com/jain-abhinav/chatbot_cornell_movie_database/blob/master/RNN%20Architectures.png)
-Figure 1: RNN architectures [12]
+<br>Figure 1: RNN architectures [12]
 
 
 <br>
@@ -165,7 +165,7 @@ also help in mitigating vanishing gradient issue. Figure 2 depicts forward propa
 
 <br>
 ![alt text](https://github.com/jain-abhinav/chatbot_cornell_movie_database/blob/master/seq-seq%20architecture.png)
-Figure 2: Single hidden layer encoder-decoder RNN architecture with attention [10, 16]
+<br>Figure 2: Single hidden layer encoder-decoder RNN architecture with attention [10, 16]
 
 <br>
 2.2.1 Backpropagation Through Time (BPTT)
