@@ -10,11 +10,11 @@
 Important Resources:
 <br/> Chatbots with Seq2Seq: http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/
 <br/> Neural Machine Translation (seq2seq) Tutorial: https://github.com/tensorflow/nmt
+<br/> Sequence Models: https://www.coursera.org/learn/nlp-sequence-models 
 <br/> Deep Learning and NLP A-ZTM: How to create a ChatBot: https://www.udemy.com/chatbot/learn/v4/overview
 
 
 Other Relevant Resources:
-<br/> https://www.coursera.org/learn/nlp-sequence-models 
 <br/> https://machinelearningmastery.com/encoder-decoder-recurrent-neural-network-models-neural-machine-translation/
 <br/> https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/
 <br/> https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/
@@ -27,7 +27,6 @@ Other Relevant Resources:
 <br/> https://www.tensorflow.org/tutorials/seq2seq
 
 
-<br/>
 Abstract:
 <br/>
 Recurrent Neural Networks (RNNs), a type of Artificial Neural Network (ANN),
@@ -42,11 +41,9 @@ into another sequence of symbols, is used for such tasks [3]. Such networks are 
 the inclusion of bidirectionality, and long short-term memory (LSTM) cells. An attention mechanism [4], which enables the chatbot to handle very long-range dependencies, is introduced along with the previously mentioned
 features.
 
-<br>
-<br/>
+
 1. Introduction
-<br/>
-It has long been the focus for Artificial Intelligence (AI) to build systems that can maintain a
+<br/>It has long been the focus for Artificial Intelligence (AI) to build systems that can maintain a
 dialog with humans in an intuitive manner. This post discusses the implementation of a chatbot
 which will enable users to indulge in an one-to-one multi-turn conversation. The movie-dialog
 corpus considered for this task is not specific to any particular domain and provides a brief
@@ -55,7 +52,7 @@ such dataset is the Ubuntu corpus, which if considered with the discussed model,
 instrumental in providing technical support as it includes conversations related to technical
 domain. Additionally, the considered dataset contains unstructured conversations, which favors
 the development of a chatbot that could lead a general conversation [2].
-<br>
+<br/>
 
 The chatbot in discussion leverages deep ANNs to do away with older rule-based models which
 are restricted in terms of their interpretation of questions and generation of responses, and thus,
@@ -64,7 +61,7 @@ allows the chatbot to look at each word in the query separately and also the ent
 whole to generate new / unfamiliar answers compared to the training dataset, thus, equipping the
 chatbot to handle complex queries [7]. However, in case exhaustive training is not done, such
 models may be prone to grammatical and spelling errors.
-<br>
+<br/>
 
 ANNs are computational and mathematical models that mimic the functioning of a human’s
 central nervous system. These networks involve a large number of highly interconnected
@@ -76,7 +73,7 @@ perceptron, also know as shallow neural networks. Standard ANNs are feedforward 
 no node is touched twice. ANNs’ advantages include adaptive learning, self-organization, and
 real-time operation. Deep ANNs are an extension to such networks, where there are multiple
 hidden layers and are therefore, capable of handling higher complexity [9].
-<br>
+<br/>
 
 A special type of ANN is the RNN. While feedforward networks like standard ANNs only
 consider the current input, RNNs also consider what they had perceived previously in time i.e.
@@ -89,7 +86,7 @@ and relative symbol positions to infer the meaning. As highlighted before, they 
 which provide feedback and memory to the network periodically, allowing the system to learn
 through sequence of inputs and not individual patterns. Its other applications include image
 captioning, speech synthesis, and music generation.
-<br>
+<br/>
 
 This post discusses the application of RNN-encoder-decoder architecture for building chatbots.
 These models, containing two RNNs, can be seen as English to English translation systems,
@@ -102,9 +99,8 @@ been incorporated in the chatbot to produce more meaningful responses [4]. This 
 components are described in the next section.
 
 
-<br>
 2. Background
-<br>
+<br/>
 RNNs have diverse architectures and thus, can be deployed for accomplishing various tasks. The
 different types of RNN architectures are one-to-one which is considered as a generic neural
 network architecture, one-to-many for music notes generation, many-to-one for sentiment
@@ -115,15 +111,14 @@ the many-to-many architecture used for translation, and it has two RNNs – enco
 This architecture has also proved to be efficient for sequence to sequence (seq2seq) prediction
 and allows for the training of a single model directly on source and target sentences, while
 working with variable length input and output sequence text [2].
-<br>
+<br/>
 
 ![alt text](https://github.com/jain-abhinav/chatbot_cornell_movie_database/blob/master/RNN%20Architectures.png)
-<br>Figure 1: RNN architectures [12]
+<br/>Figure 1: RNN architectures [12]
 
 
-<br>
 2.1. Previous Research
-<br>
+<br/>
 The encoder-decoder architecture is relatively new, and was first introduced for neural machine
 translation and seq2seq learning in 2014. It was deployed for English to French translation. Each
 output sentence was padded with a special end-of-sentence symbol “<EOS>” during training to
@@ -142,9 +137,9 @@ mechanism [4]. This allowed the model to focus on specific parts of the source s
 containing most relevant information, when generating a word. Thus, the word at decoder is
 predicted by looking at the context vector for source positions and previous inputs.
   
-<br
+
 2.2. Encoder-Decoder RNN Architecture
-<br>
+<br/>
 In this architecture, both the encoder and decoder layers have their distinct weights / parameters
 that are required to be optimized while training the model. In the below figure, h 0 , h 1 and so on
 are input nodes, and g 0 , g 1 and so on are output nodes; all nodes are considered as time-steps.
@@ -162,12 +157,12 @@ conditional probability is calculated for the next word. This procedure is repea
 token is predicted, leaving room for variable length outputs [3, 11]. Calculation for activation
 value and output prediction involve activation functions tanh and softmax, respectively, which
 also help in mitigating vanishing gradient issue. Figure 2 depicts forward propagation in RNNs.
-<br>
+<br/>
 
 ![alt text](https://github.com/jain-abhinav/chatbot_cornell_movie_database/blob/master/seq-seq%20architecture.png)
-<br>Figure 2: Single hidden layer encoder-decoder RNN architecture with attention [10, 16]
+<br/>Figure 2: Single hidden layer encoder-decoder RNN architecture with attention [10, 16]
 
-<br>
+
 2.2.1 Backpropagation Through Time (BPTT)
 The above discussed parameters are optimized and the network learns through backpropagation
 using a loss function. During training, loss value for each time-step is calculated by comparing
@@ -179,9 +174,9 @@ activation values, which is from right to left instead of left to right as in th
 propagation i.e. in decreasing time-steps. Thus, the algorithm is stated as backpropagation
 through time.
 
-<br>
+
 2.2.2 Vanishing Gradient Problem
-<br>
+<br/>
 For certain sequences, language can have very long-term dependencies where a word occurring in
 the beginning could impact a word towards the end of the sentence. While carrying out forward
 and backpropagation, the error outputs for later time-steps find it hard to propagate back to affect
@@ -192,9 +187,9 @@ identify as the network jams and outputs NaN values [1, 16]. Gradient clipping i
 easy solution for exploding gradient. Whereas, vanishing gradient is a more complex issue and
 can be addressed by incorporating Greater Recurrent Units or LSTMs.
 
-<br>
+
 2.2.3 LSTM
-<br>
+<br/>
 LSTMs, a special form of RNNs, are equipped with handling long-term dependency issues
 discussed above. They memorize a relevant state for a word in the beginning, which if required,
 can be applied to a word towards the end i.e. they preserve the error that is backpropagated
@@ -204,9 +199,9 @@ should be represented with “are” by the chatbot. However, the model without 
 high number of words in between, will find it difficult to carry on this information from the word
 “Cats” to the word “are” due to the vanishing gradient problem, and might instead predict “is”.
 
-<br>
+
 2.2.4 Bidirectionality
-<br>
+<br/>
 As highlighted before, the network functions from left to right, and therefore words appearing
 after a particular time-step are not considered for computing parameters for that time-step. This
 limitation results in a lower performance, as there could be an instance where a word occurring in
@@ -219,9 +214,9 @@ be hosted at which location?” and “Teddy bear is placed at what position?”
 unidirectional RNN, the chatbot might not be able to identify which “Teddy” is being talked
 about.
 
-<br>
+
 2.2.5 Attention Mechanism
-<br>
+<br/>
 Through this framework, each output word has access to input context vectors and the model
 searches for input positions that can provide the most relevant information. The information from
 context vectors is fed in the decoder cell, along with other parameters which helps in predicting a
