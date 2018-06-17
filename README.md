@@ -6,6 +6,7 @@
 <br/> re
 <br/> time
 
+How to Run: Extract the text files from movie_lines_datasets.zip in the same folder as chatbot_with_attention.py, and run the python file.  The model will train on the cornell movie dataset, creating the ckpt file, which can be used to initiate conversations.
 
 Important Resources:
 <br/> Chatbots with Seq2Seq: http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/
