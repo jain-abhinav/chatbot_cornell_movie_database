@@ -162,8 +162,8 @@ conditional probability is calculated for the next word. This procedure is repea
 token is predicted, leaving room for variable length outputs [3, 11]. Calculation for activation
 value and output prediction involve activation functions tanh and softmax, respectively, which
 also help in mitigating vanishing gradient issue. Figure 2 depicts forward propagation in RNNs.
-
 <br>
+
 ![alt text](https://github.com/jain-abhinav/chatbot_cornell_movie_database/blob/master/seq-seq%20architecture.png)
 <br>Figure 2: Single hidden layer encoder-decoder RNN architecture with attention [10, 16]
 
