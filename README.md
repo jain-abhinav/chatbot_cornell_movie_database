@@ -1,9 +1,13 @@
 # RNN Based Chatbot using Cornell Movie Dataset
 
 #Dependencies:
+
 tensorflow==1.0.1
+
 numpy
+
 re
+
 time
 
 
