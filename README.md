@@ -3,27 +3,44 @@
 #Dependencies:
 
 tensorflow==1.0.1
+
 numpy
+
 re
+
 time
 
 
 Important Resources:
+
 Chatbots with Seq2Seq: http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/
+
 Neural Machine Translation (seq2seq) Tutorial: https://github.com/tensorflow/nmt
+
 Deep Learning and NLP A-ZTM: How to create a ChatBot: https://www.udemy.com/chatbot/learn/v4/overview
 
 Other Relevant Resources:
+
 https://www.coursera.org/learn/nlp-sequence-models
+
 https://machinelearningmastery.com/encoder-decoder-recurrent-neural-network-models-neural-machine-translation/
+
 https://machinelearningmastery.com/configure-encoder-decoder-model-neural-machine-translation/
+
 https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/
+
 https://machinelearningmastery.com/how-does-attention-work-in-encoder-decoder-recurrent-neural-networks/
+
 https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/
+
 https://jasdeep06.github.io/posts/Understanding-LSTM-in-Tensorflow-MNIST/
+
 http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
 https://deeplearning4j.org/lstm.html
+
 https://deeplearning4j.org/neuralnet-overview
+
 https://www.tensorflow.org/tutorials/seq2seq
 
 Introduction:
